@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t anassdocker/react-learn -f Dockerfile.dev .
+
+script:
+  - docker run anassdocker/react-learn npm run -- --coverage 
